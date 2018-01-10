@@ -1,7 +1,5 @@
 package com.sangou;
 
-import org.jetbrains.annotations.Nullable;
-
 class Shape {
     void draw() {
     }
@@ -48,7 +46,6 @@ class Triangle extends Shape {
 }
 
 public class Shapes extends Shape {
-    @Nullable
     public static Shape randonShape() {
         switch ((int) (Math.random() * 3)) {
             case 0: {

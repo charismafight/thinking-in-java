@@ -1,5 +1,7 @@
 package com.sangou;
 
+import java.security.PrivilegedAction;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,5 +33,19 @@ public class Main {
             System.out.println(s.getClass());
             s.draw();
         }
+
+        Controller controller = new Controller();
+        controller.addEvent(new Event(10) {
+            @Override
+            public void action() {
+                System.out.println("new event");
+            }
+
+            @Override
+            public String description() {
+                return null;
+            }
+        });
+        controller.run();
     }
 }
