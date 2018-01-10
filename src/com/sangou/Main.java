@@ -22,5 +22,14 @@ public class Main {
         FinalData fd2 = new FinalData();
         fd1.print("fd2");
         fd2.print("fd2");
+
+        Shape[] shapes = new Shape[9];
+        for (int i = 0; i < shapes.length; i++) {
+            shapes[i] = Shapes.randonShape();
+        }
+        for (Shape s : shapes) {
+            System.out.println(s.getClass());
+            s.draw();
+        }
     }
 }
