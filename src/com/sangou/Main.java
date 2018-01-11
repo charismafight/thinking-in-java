@@ -1,6 +1,10 @@
 package com.sangou;
 
 import java.security.PrivilegedAction;
+import java.util.BitSet;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
@@ -47,5 +51,9 @@ public class Main {
             }
         });
         controller.run();
+
+        BitSet bs = new BitSet();
+        System.out.println(bs.size());
+        System.out.println((1L << 2));
     }
 }
