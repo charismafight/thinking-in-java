@@ -1,6 +1,8 @@
 package com.sangou;
 
 import java.util.BitSet;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
@@ -51,5 +53,7 @@ public class Main {
         BitSet bs = new BitSet();
         System.out.println(bs.size());
         System.out.println((1L << 2));
+
+        System.out.println(1 << 10);
     }
 }
