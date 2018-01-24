@@ -1,8 +1,5 @@
 package sort;
 
-
-import javax.xml.transform.Result;
-
 public class Sorts {
     public static void main(String[] args) {
         int[] result = quickSort(new int[]{3, 2, 234, 64, 5, 768, 3, 5, 7, 4643, 6});
@@ -56,3 +53,5 @@ public class Sorts {
         return;
     }
 }
+
+
