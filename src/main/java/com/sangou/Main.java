@@ -1,6 +1,8 @@
 package com.sangou;
 
+import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.List;
 
 public class Main {
 
@@ -51,5 +53,12 @@ public class Main {
         BitSet bs = new BitSet();
         System.out.println(bs.size());
         System.out.println((1L << 2));
+
+        List list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        System.out.println(list.listIterator(1).next());
+        System.out.println(list.listIterator(2).next());
     }
 }

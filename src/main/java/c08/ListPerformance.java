@@ -1,9 +1,7 @@
 package c08;
 
-import org.ietf.jgss.Oid;
 
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ListPerformance {
     private static final int REPS = 100;
@@ -40,6 +38,45 @@ public class ListPerformance {
                         }
                     }
                 }
+            },
+            new Tester("insert", 1000) {
+                @Override
+                void test(List a) {
+                    int half = a.size() / 2;
+                    String s = "test";
+                    ListIterator iterator = a.listIterator(half);
+                    for (int i = 0; i < size * 10.; i++) {
+                        iterator.add(s);
+                    }
+                }
+            },
+            new Tester("remove", 5000) {
+                @Override
+                void test(List a) {
+                    ListIterator listIterator = a.listIterator(3);
+                    while (listIterator.hasNext()) {
+                        listIterator.next();
+                        listIterator.remove();
+                    }
+                }
             }
     };
+
+    private static void test(List a) {
+        //	A	trick	to	print	out	the	class	name:
+        System.out.println("Testing	" + a.getClass().getName());
+        for (int i = 0; i < tests.length; i++) {
+            Collection1.fill(a, tests[i].size);
+            System.out.print(tests[i].name);
+            long t1 = System.currentTimeMillis();
+            tests[i].test(a);
+            long t2 = System.currentTimeMillis();
+            System.out.println(":	" + (t2 - t1));
+        }
+    }
+
+    public static void main(String[] args) {
+        test(new ArrayList());
+        test(new LinkedList());
+    }
 }
