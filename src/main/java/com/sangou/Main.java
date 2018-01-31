@@ -1,8 +1,11 @@
 package com.sangou;
 
+import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Main {
 
@@ -60,5 +63,21 @@ public class Main {
         list.add(3);
         System.out.println(list.listIterator(1).next());
         System.out.println(list.listIterator(2).next());
+
+        int ch = 0;
+        String str = "abc";
+        StringReader stringReader = new StringReader(str);
+        try {
+            ch = stringReader.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(ch);
+
+        String testStr = "i am a dog";
+        StringTokenizer st = new StringTokenizer(testStr);
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
     }
 }
