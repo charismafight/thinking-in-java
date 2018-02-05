@@ -1,3 +1,5 @@
+package designpattern;
+
 import java.util.HashMap;
 
 public class FlyWeight {
