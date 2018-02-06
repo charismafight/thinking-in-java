@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -79,5 +81,8 @@ public class Main {
         while (st.hasMoreTokens()) {
             System.out.println(st.nextToken());
         }
+
+        //线程池中的策略模式
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 4, 1000, TimeUnit.DAYS, null, new ThreadPoolExecutor.CallerRunsPolicy());
     }
 }
